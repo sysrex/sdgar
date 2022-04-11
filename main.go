@@ -6,8 +6,9 @@ import (
 	swagger "github.com/arsmn/fiber-swagger/v2"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
+	"github.com/sysrex/sdgar/config"
+	"github.com/sysrex/sdgar/database"
 	_ "github.com/sysrex/sdgar/docs"
-	"honnef.co/go/tools/config"
 )
 
 //@Description Geting for welcome endpoint
@@ -29,7 +30,7 @@ func SetupRoutes(app *fiber.App) {
 	app.Get(apiVersion+apiURL, welcome)
 
 	//Swagger endpoint making for API document
-	app.Get("/v1/api/swagger/*", swagger.Handler)
+	app.Get("/v1/api/swagger/*", swagger.HandlerDefault)
 
 }
 
