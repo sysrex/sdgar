@@ -9,12 +9,7 @@
 1. Create a new project with Fiber:
 
 ```bash
-cgapp create
-
-# Choose a backend framework:
-#   net/http
-# > fiber
-#   chi
+clone the repository
 ```
 
 2. Rename `.env.example` to `.env` and fill it with your environment values.

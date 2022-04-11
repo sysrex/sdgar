@@ -17,12 +17,7 @@ type DatabaseInstance struct {
 var Database DatabaseInstance
 
 func ConnectDatabase() {
-	dbName := os.Getenv("DB_NAME")
-	dbUser := os.Getenv("DB_USER")
-	dbPass := os.Getenv("DB_PASS")
-	dbHost := os.Getenv("DB_HOST")
-
-	conn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", dbUser, dbPass, dbHost, "3306", dbName)
+	conn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", os.Getenv("DB_USER"), os.Getenv("DB_PASS"), os.Getenv("DB_HOST"), "3306", os.Getenv("DB_NAME"))
 	db, err := gorm.Open(mysql.Open(conn), &gorm.Config{})
 
 	if err != nil {

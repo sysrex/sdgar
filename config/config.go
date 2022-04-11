@@ -7,7 +7,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-//Function making for read configuration from env file by parameter key
+// Function making for read configuration from env file by parameter key
 func Config(key string) string {
 	err := godotenv.Load(".env")
 	if err != nil {

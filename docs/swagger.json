@@ -1,0 +1,27 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/api": {
+            "get": {
+                "description": "Geting for welcome endpoint",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Welcome"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
